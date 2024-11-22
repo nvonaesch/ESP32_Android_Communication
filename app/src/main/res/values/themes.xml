@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.BluetoothESP32" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">#96ae1f</item>
+        <item name="colorPrimaryVariant">#B7D526</item>
+        <item name="colorOnPrimary">#96ae1f</item>
+
+        <item name="colorSecondary">#96ae1f</item>
+        <item name="colorSecondaryVariant">#96ae1f</item>
+        <item name="colorOnSecondary">#96ae1f</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+    </style>
+</resources>

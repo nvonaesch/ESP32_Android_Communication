@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:background="@drawable/button_gradient"
+        android:icon="@drawable/ic_launcher_foreground"/>
+
+    <item android:title="Configuration"
+        android:id="@+id/configuration"
+        android:background="@drawable/button_gradient"
+        android:icon="@drawable/plante"/>
+
+</menu>

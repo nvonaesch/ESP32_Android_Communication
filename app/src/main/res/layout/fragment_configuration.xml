@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:onClick="connectBluetooth"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Configuration">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_petunia_grand" />
+
+    <TextView
+        android:id="@+id/connectBluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@drawable/button_gradient"
+        android:gravity="center"
+        android:text="Configuration Bluetooth"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="110dp" />
+
+    <EditText
+        android:id="@+id/wifiSSID"
+        android:layout_width="244dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_gradient"
+        android:hint="Nom du point d'accès"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <EditText
+        android:id="@+id/wifiPassword"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_gradient"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="126dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:background="@drawable/button_gradient"
+        android:text="Confirmer"
+        android:textAppearance="@android:style/TextAppearance.Material.Body1"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
