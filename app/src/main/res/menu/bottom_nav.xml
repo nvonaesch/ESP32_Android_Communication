@@ -3,12 +3,11 @@
 
     <item android:title="Home"
         android:id="@+id/home"
-        android:background="@drawable/button_gradient"
-        android:icon="@drawable/ic_launcher_foreground"/>
+        android:icon="@drawable/greenhouse" />
 
     <item android:title="Configuration"
         android:id="@+id/configuration"
-        android:background="@drawable/button_gradient"
-        android:icon="@drawable/plante"/>
+        android:icon="@drawable/home_icon"
+        />
 
 </menu>

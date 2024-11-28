@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    android:onClick="connectBluetooth"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Configuration">
@@ -13,20 +12,29 @@
         android:layout_height="200dp"
         android:src="@drawable/logo_petunia_grand" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+
     <TextView
-        android:id="@+id/connectBluetooth"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:background="@drawable/button_gradient"
-        android:gravity="center"
-        android:text="Configuration Bluetooth"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Veuillez renseigner les champs suivant puis appuyer sur le bouton &quot;Confirmer&quot;"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="110dp" />
+        android:layout_height="64dp" />
+
 
     <EditText
         android:id="@+id/wifiSSID"
@@ -59,7 +67,7 @@
         android:layout_height="50dp" />
 
     <Button
-        android:id="@+id/buttonSend"
+        android:id="@+id/connectBluetooth"
         android:layout_width="126dp"
         android:layout_height="50dp"
         android:layout_gravity="end"

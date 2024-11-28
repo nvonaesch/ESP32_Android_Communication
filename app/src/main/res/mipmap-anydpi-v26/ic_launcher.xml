@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@drawable/plante" />
-    <foreground android:drawable="@drawable/plante" />
-    <monochrome android:drawable="@drawable/plante" />
+    <background android:drawable="@drawable/logo_petunia_plante_seule" />
+    <foreground android:drawable="@drawable/logo_petunia_plante_seule" />
+    <monochrome android:drawable="@drawable/logo_petunia_plante_seule" />
 </adaptive-icon>
