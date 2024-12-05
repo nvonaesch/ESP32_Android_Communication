@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import java.io.IOException
 import java.util.UUID
 
@@ -24,8 +25,11 @@ class BluetoothPopupFragment : DialogFragment() {
     private lateinit var bluetoothAdapter: BluetoothAdapter
     private var bluetoothSocket: BluetoothSocket? = null
 
+    private lateinit var macAddress: String
     private lateinit var ssid: String
     private lateinit var password: String
+
+    private lateinit var sharedViewModel: SharedViewModel
 
     companion object {
         private const val ARG_SSID = "arg_ssid"
@@ -47,6 +51,8 @@ class BluetoothPopupFragment : DialogFragment() {
             ssid = it.getString(ARG_SSID) ?: ""
             password = it.getString(ARG_PASSWORD) ?: ""
         }
+
+        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -55,11 +61,6 @@ class BluetoothPopupFragment : DialogFragment() {
 
         val listView = dialog.findViewById<ListView>(R.id.listViewBluetoothDevices)
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-
-        if (bluetoothAdapter == null) {
-            Toast.makeText(context, "Bluetooth non pris en charge", Toast.LENGTH_SHORT).show()
-            return dialog
-        }
 
         if (!bluetoothAdapter.isEnabled) {
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
@@ -138,9 +139,9 @@ class BluetoothPopupFragment : DialogFragment() {
 
             sendWiFiInfo()
 
-            Thread.sleep((8000))
+            Thread.sleep(10000)
 
-            receiveWiFiInfo()
+            receiveWiFiInfo(device)
 
         } catch (e: IOException) {
             Log.e("Bluetooth", "Erreur de connexion: ${e.message}", e)
@@ -151,7 +152,7 @@ class BluetoothPopupFragment : DialogFragment() {
     private fun sendWiFiInfo() {
         try {
             bluetoothSocket?.outputStream?.write(ssid.toByteArray())
-            Thread.sleep((2000))
+            Thread.sleep(2000)
             bluetoothSocket?.outputStream?.write(password.toByteArray())
             Toast.makeText(context, "Informations Wi-Fi envoyées", Toast.LENGTH_SHORT).show()
         } catch (e: IOException) {
@@ -160,27 +161,39 @@ class BluetoothPopupFragment : DialogFragment() {
         }
     }
 
-    private fun receiveWiFiInfo(): String {
-        val inputStream = bluetoothSocket?.inputStream
-        if (inputStream == null) {
-            return ""
-        }
+    private fun receiveWiFiInfo(device: BluetoothDevice): String {
+        val inputStream = bluetoothSocket?.inputStream ?: return ""
         val buffer = ByteArray(1024)
         val stringBuilder = StringBuilder()
 
         try {
             var bytesRead: Int
-            do{
+            do {
                 bytesRead = inputStream.read(buffer)
 
                 val received = String(buffer, 0, bytesRead)
                 stringBuilder.append(received)
 
                 if (received.contains("\n")) break
-            }while(bytesRead != -1)
+            } while (bytesRead != -1)
 
             val IPESP = stringBuilder.toString().trim()
-            Toast.makeText(context, "$IPESP", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, IPESP, Toast.LENGTH_SHORT).show()
+
+
+            macAddress = device.address
+            val newESP = ESP(
+                macAddress = macAddress,
+                ip = IPESP,
+                especePlante = "Orchid",
+                temperature = 23.2f,
+                humiditeSol = 53.2f,
+                humidite = 12.3f,
+                luminositeSuffisante = false
+            )
+
+            sharedViewModel.addOrUpdateESP(newESP)
+
             return IPESP
         } catch (e: IOException) {
             Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()

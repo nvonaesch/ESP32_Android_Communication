@@ -6,5 +6,11 @@ data class ESP(
     var especePlante: String,
     var temperature: Float,
     var humiditeSol: Float,
+    var humidite: Float,
     var luminositeSuffisante: Boolean
 )
+
+
+
+
+

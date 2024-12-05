@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item android:title="@string/my_garden"
         android:id="@+id/home"
         android:icon="@drawable/greenhouse" />
 
-    <item android:title="Configuration"
+    <item android:title="@string/setup_a_device"
         android:id="@+id/configuration"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/settings"
         />
 
 </menu>

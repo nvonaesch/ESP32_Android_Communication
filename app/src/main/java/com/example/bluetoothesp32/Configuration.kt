@@ -35,8 +35,6 @@ class Configuration : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val connectBluetoothButton = view.findViewById<TextView>(R.id.connectBluetooth)
-        val ssid = view.findViewById<EditText>(R.id.wifiSSID).text.toString()
-        val password = view.findViewById<EditText>(R.id.wifiPassword).text.toString()
 
         connectBluetoothButton.setOnClickListener {
             val ssid = view.findViewById<EditText>(R.id.wifiSSID).text.toString()
@@ -44,16 +42,5 @@ class Configuration : Fragment() {
             val bluetoothPopup = BluetoothPopupFragment.newInstance(ssid, password)
             bluetoothPopup.show(parentFragmentManager, "BluetoothPopup")
         }
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Configuration().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

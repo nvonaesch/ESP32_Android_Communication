@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#96ae1f"
+tools:context=".Home"
+android:padding="16dp">
+
+<ImageView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#96ae1f"
-    tools:context=".Home"
-    android:padding="16dp">
-
-    <ImageView
+    android:layout_height="200dp"
+    android:src="@drawable/logo_petunia_grand"
+    android:layout_gravity="center_horizontal"/>
+    <FrameLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/logo_petunia_grand"/>
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewESP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
-
+        android:layout_marginTop="220dp"
+        tools:listitem="@layout/item_esp_data" />
+    </FrameLayout>
 </FrameLayout>
+
+

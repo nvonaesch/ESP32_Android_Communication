@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">BluetoothESP32</string>
     <string name="Pétunia">Pétunia</string>
+    <string name="appareils_disponibles">Available devices:</string>
+    <string name="setup_a_device">Setup a device</string>
+    <string name="my_garden">My Garden</string>
+    <string name="humidit">Humidity :</string>
+    <string name="humidit_de_sol">Soil Moisture:</string>
+    <string name="luminosit_suffisante">LSufficient brightness :</string>
+    <string name="actualiser_donn_es">Refresh data</string>
+    <string name="temperature">Temperature :</string>
+    <string name="plante">Plant :</string>
+    <string name="addresse_ip">Plant IP Address :</string>
+    <string name="remplirChamp">Please complete the following fields then press the \"Confirm\" button</string>
+    <string name="nom_du_point_d_acc_s">Access point name</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="confirmer">Confirm</string>
 </resources>

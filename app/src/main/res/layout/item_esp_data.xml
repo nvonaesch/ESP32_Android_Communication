@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/button_gradient"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/textViewIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addresse_ip"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textViewPlante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plante"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/textViewTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temperature"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/textViewHumidite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidit"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/textViewHumiditeSol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidit_de_sol"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/textViewLuminosite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/luminosit_suffisante"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginStart="15dp"/>
+    <Button
+        android:id="@+id/buttonSendSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_gradient_round"
+        android:textColor="@color/white"
+        android:text="@string/actualiser_donn_es"
+        android:textSize="11sp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:minHeight="0dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp" />
+
+</LinearLayout>
