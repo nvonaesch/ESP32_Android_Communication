@@ -6,3 +6,5 @@ The ESP32 then connects to the WiFi network with the logs bluetooth provided.
 Finally the ESP32 then sends over TCPSocket the sensors values.
 
 ## User Interface
+
+[User Interface](UI.png)
